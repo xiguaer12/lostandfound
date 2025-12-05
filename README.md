@@ -63,7 +63,7 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE COMMENT '用户名',
     password VARCHAR(255) NOT NULL COMMENT '加密后的密码'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-2. 物品表 (items)
+### 2. 物品表 (items)
 用于存储失物招领信息，关联到发布用户。
 code
 SQL
@@ -77,14 +77,14 @@ CREATE TABLE items (
     user_id INT NOT NULL COMMENT '发布者ID',
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-🚀 快速开始 (使用方法)
-1. 环境准备
+## 🚀 快速开始 (使用方法)
+### 1. 环境准备
 安装 Java JDK 8+。
 安装 Maven。
 安装 MySQL 数据库。
 下载并解压 Tomcat 10+。
 IDE 推荐使用 IntelliJ IDEA 或 Eclipse。
-2. 数据库配置
+### 2. 数据库配置
 执行上述 SQL 脚本创建数据库和表。
 打开项目中 src/main/java/com/yourdomain/dao/DatabaseUtil.java 文件。
 修改 USER 和 PASSWORD 常量为您本地 MySQL 的账号和密码。
@@ -93,7 +93,7 @@ Java
 private static final String URL = "jdbc:mysql://localhost:3306/lostandfound";
 private static final String USER = "root";       // 修改这里
 private static final String PASSWORD = "root";   // 修改这里
-3. 构建与部署
+### 3. 构建与部署
 使用 IntelliJ IDEA:
 导入项目为 Maven 项目。
 配置 Tomcat Server：
@@ -105,7 +105,7 @@ Application context: 设置为 /lostandfound (或者 /)。
 在项目根目录运行 mvn clean package。
 将生成的 .war 文件复制到 Tomcat 的 webapps 目录下。
 启动 Tomcat。
-4. 访问系统
+### 4. 访问系统
 打开浏览器访问：http://localhost:8080/lostandfound/home
 (注意：如果您的 Application context 设置不同，请相应调整 URL)
 ✨ 功能特性
