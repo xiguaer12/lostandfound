@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/lostandfound";
-    private static final String USER = "root";
+    private static final String URL = "jdbc:mysql://10.100.164.29:3306/lostandfound";
+    private static final String USER = "admin";
     private static final String PASSWORD = "123456";
 
     static {
