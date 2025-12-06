@@ -27,24 +27,24 @@
     *   使用 JSTL 标签库进行数据渲染，CSS 进行样式美化。
 
 2.  **Controller (控制层 - Servlet)**
-    *   位于 `com.yourdomain.servlet`。
+    *   位于 `com.servlet`。
     *   负责接收 HTTP 请求，解析参数。
     *   调用业务逻辑层（Service）处理业务。
     *   控制页面跳转（转发或重定向）。
 
 3.  **Service (业务逻辑层 - BL)**
-    *   位于 `com.yourdomain.bl`。
+    *   位于 `com.bl`。
     *   负责核心业务逻辑处理（如密码校验、权限判断）。
     *   作为 Controller 和 DAO 之间的桥梁，确保事务的一致性。
 
 4.  **DAO (数据访问层)**
-    *   位于 `com.yourdomain.dao`。
+    *   位于 `com.dao`。
     *   封装 JDBC 操作，直接与数据库交互。
     *   实现 CRUD（增删改查）的具体 SQL 逻辑。
     *   包含数据库连接工具类 `DatabaseUtil`。
 
 5.  **Entity (实体层 - POJO)**
-    *   位于 `com.yourdomain.entity`。
+    *   位于 `com.entity`。
     *   简单的 Java 对象，对应数据库表结构，用于层间数据传输。
 
 ---
@@ -86,13 +86,8 @@ CREATE TABLE items (
 IDE 推荐使用 IntelliJ IDEA 或 Eclipse。
 ### 2. 数据库配置
 执行上述 SQL 脚本创建数据库和表。
-打开项目中 src/main/java/com/yourdomain/dao/DatabaseUtil.java 文件。
+打开项目中 src/main/java/com/dao/DatabaseUtil.java 文件。
 修改 USER 和 PASSWORD 常量为您本地 MySQL 的账号和密码。
-code
-Java
-private static final String URL = "jdbc:mysql://localhost:3306/lostandfound";
-private static final String USER = "root";       // 修改这里
-private static final String PASSWORD = "root";   // 修改这里
 ### 3. 构建与部署
 使用 IntelliJ IDEA:
 导入项目为 Maven 项目。
@@ -106,7 +101,7 @@ Application context: 设置为 /lostandfound (或者 /)。
 将生成的 .war 文件复制到 Tomcat 的 webapps 目录下。
 启动 Tomcat。
 ### 4. 访问系统
-打开浏览器访问：http://localhost:8080/lostandfound/home
+打开浏览器访问：http://10.100.164.29:8080/lostandfound/home
 (注意：如果您的 Application context 设置不同，请相应调整 URL)
 ✨ 功能特性
 用户认证:
